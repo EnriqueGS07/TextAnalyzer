@@ -53,6 +53,17 @@ button{
     width: 80px;
     font-family: 'Uchen', serif;
     font-size: medium;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #223a4f;
+    color: #f2e9d8;
+}
+
+button:active{
+    background-color: #f2e9d8;
+    color: #223a4f;
+    border-color: #1c2f40;
+    font-weight: bolder;
 }
 
 select{
@@ -63,6 +74,8 @@ select{
     width: 120px;
     height: 40px;
     border-radius: 12px;
+    background-color: #223a4f;
+    color: #f2e9d8;
 }
 
 
