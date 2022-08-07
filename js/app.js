@@ -7,11 +7,31 @@ var Texto = function(){
 var ViewModel = function(){
     var self = this;
     this.texto = ko.observable(new Texto);
+    this.contarPalabras = function(string){
+        var list = string.split(' ');
+        var contador = 0;
+        for(var i=0;i<list.length; i++){
+            if(list[i] !== ''){
+                contador+=1;
+            };
+        };
+        return contador;
+    }
+
+    this.contarLetras = function(string){
+        var contador = 0;
+        for(var i=0;i<string.length; i++){
+            if(/^[!-■]$/i.test(string[i])){
+                contador+=1;
+            };
+        };
+        return contador;
+    };
     this.setValoresTexto = function(){
         var textArea = $('textarea').val();
         self.texto().contenido(textArea);
-        self.texto().numLetras(textArea.length)
-        self.texto().numPalabras(textArea.split(' ').length - 1);
+        self.texto().numLetras(self.contarLetras(textArea))
+        self.texto().numPalabras(self.contarPalabras(textArea));
     };
     this.showValores = function(){
         self.setValoresTexto();
