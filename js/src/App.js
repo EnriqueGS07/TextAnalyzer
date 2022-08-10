@@ -7,31 +7,14 @@ var Texto = function(){
 var ViewModel = function(){
     var self = this;
     this.texto = ko.observable(new Texto);
-    this.contarPalabras = function(string){
-        var list = string.split(' ');
-        var contador = 0;
-        for(var i=0;i<list.length; i++){
-            if(list[i] !== ''){
-                contador+=1;
-            };
-        };
-        return contador;
-    }
-
-    this.contarLetras = function(string){
-        var contador = 0;
-        for(var i=0;i<string.length; i++){
-            if(/^[!-■]$/i.test(string[i])){
-                contador+=1;
-            };
-        };
-        return contador;
-    };
+    this.funciones = new Funciones();
+    
     this.setValoresTexto = function(){
         var textArea = $('textarea').val();
         self.texto().contenido(textArea);
-        self.texto().numLetras(self.contarLetras(textArea))
-        self.texto().numPalabras(self.contarPalabras(textArea));
+        self.texto().numLetras(self.funciones.contarLetras(textArea))
+        self.texto().numPalabras(self.funciones.contarPalabras(textArea));
+        
     };
     this.showValores = function(){
         self.setValoresTexto();
@@ -56,6 +39,7 @@ var ViewModel = function(){
         }
         console.log("si");
     };
+
 
 };
 ko.applyBindings(new ViewModel)
