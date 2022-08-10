@@ -22,6 +22,7 @@ var ViewModel = function(){
         var numLetras = $('#num-letras');
         numPalabras.text('Numero de palabras: ' + self.texto().numPalabras());
         numLetras.text('Numero de letras: ' + self.texto().numLetras());
+        self.mostrarRepetidas();
     }
 
     this.limpiar = function(){
@@ -31,14 +32,17 @@ var ViewModel = function(){
 
     this.toggleCorreccion = function(){
         var textArea = document.querySelector('textarea');
-        console.log(textArea.spellcheck);
         if(textArea.spellcheck == true){
             textArea.spellcheck = false;
         }else if(textArea.spellcheck == false){
             textArea.spellcheck = true;
         }
-        console.log("si");
     };
+
+    this.mostrarRepetidas = function () {
+        var repetidas = self.funciones.calcularRepetidas(self.texto().contenido());
+        console.log(repetidas);
+    }
 
 
 };
