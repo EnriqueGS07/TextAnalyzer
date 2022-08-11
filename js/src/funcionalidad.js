@@ -21,19 +21,16 @@ class Funciones {
     };
 
     calcularRepetidas = function (string) {
+        string = string.trim();
         var list = string.split(' ');
         var repetidas = new Set();
-        console.log(list);
         for (var i = 0; i < list.length; i++) {
-            if (list[i] === '') {
-                list.splice(0, i);
-            }
+                list[i].trim();
         }
-        console.log(list);
         for (var i = 0; i < list.length; i++) {
             for (var j = i + 1; j < list.length; j++) {
-                if (list[i] === list[j]) {
-                    repetidas.add(list[i]);
+                if (list[i] === list[j] && list[i] !== '') {
+                    repetidas.add(" "+ list[i]+" ");
                 }
             }
         }

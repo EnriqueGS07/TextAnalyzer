@@ -41,6 +41,19 @@ var ViewModel = function(){
 
     this.mostrarRepetidas = function () {
         var repetidas = self.funciones.calcularRepetidas(self.texto().contenido());
+        var contenido = self.texto().contenido();
+        for(var i = 0; i<repetidas.length; i++){
+            var pos = 0;
+            var currentWord = repetidas[i];
+            for(var j = 0; j<contenido.length; j++){
+                if(currentWord[0] === contenido[j]){
+                    var esIgual = true;
+                    for(var k = 0; k<currentWord.length;k++ ){
+                            
+                    }
+                }
+            }
+        }
         console.log(repetidas);
     }
 
