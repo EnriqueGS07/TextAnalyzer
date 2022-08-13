@@ -94,6 +94,17 @@ select{
     color: #1c2f40;
 }
 
+span{
+    color: #1c2f40;
+    font-weight: bolder;
+    background-color: #1c2f40;
+}
+
+.subrayada{
+    color: #1c2f40;
+    font-weight: bolder;
+    background-color: #1c2f40;
+}
 
 #info{
     position: relative;

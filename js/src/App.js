@@ -41,20 +41,24 @@ var ViewModel = function(){
 
     this.mostrarRepetidas = function () {
         var repetidas = self.funciones.calcularRepetidas(self.texto().contenido());
-        var contenido = self.texto().contenido();
-        for(var i = 0; i<repetidas.length; i++){
-            var pos = 0;
-            var currentWord = repetidas[i];
-            for(var j = 0; j<contenido.length; j++){
-                if(currentWord[0] === contenido[j]){
-                    var esIgual = true;
-                    for(var k = 0; k<currentWord.length;k++ ){
-                            
-                    }
+        var listaContenido = self.texto().contenido().split(" ");
+        var posiciones = [];
+        for(let currentWord of repetidas){
+            for(var i = 0; i<listaContenido.length;i++){
+                if(currentWord === listaContenido[i]){
+                    posiciones.push(i)
                 }
             }
         }
-        console.log(repetidas);
+        var agregadas = 0;
+        for(let i = 0; i<posiciones.length;i++){
+            listaContenido.splice(posiciones[i]+agregadas+1,0,"</span>")
+            listaContenido.splice(posiciones[i]+agregadas,0,"<span class=\"subrayada\">")
+            agregadas+=2;
+            console.log(listaContenido);
+        }
+        var textArea = $('textarea');
+        textArea.html = listaContenido.join(" ");
     }
 
 

@@ -44,7 +44,7 @@ describe('Funcionalidades', function(){
 
     it('Deberia obtener palabras repetidas', function(){
         var cadena = "estas son las palabras repetidas estas son las palabras repetidas , el resto despues de la coma no"
-        var esperadas = new Set([" estas ", " son ", " las ", " palabras ", " repetidas "]);
+        var esperadas = new Set(["estas", "son", "las", "palabras", "repetidas"]);
         expect(funcionalidad.calcularRepetidas(cadena)).toEqual(esperadas);
         
     });
