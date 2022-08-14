@@ -94,16 +94,21 @@ select{
     color: #1c2f40;
 }
 
-span{
-    color: #1c2f40;
-    font-weight: bolder;
-    background-color: #1c2f40;
+.info-repetidas{
+    background-color: #f2e9d8;
+    width: 831px;
+    height: 386px;
+    display: none;
+    font-family: 'Noto Serif', serif;
+    font-size: 14px;
+    border-radius: 12px;
+    outline-color: #1c2f40;
+    border-width: 2px;
 }
 
 .subrayada{
-    color: #1c2f40;
-    font-weight: bolder;
-    background-color: #1c2f40;
+    background-color: brown;
+    border-radius: 12px;
 }
 
 #info{
@@ -118,4 +123,8 @@ span{
     top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+#mostrar-repetidas{
+    width: 300px;
 }

@@ -19,9 +19,10 @@
     <div class="container">
         <h1>Text Analyzer</h1>
     </div>
-    <div class="container">
+    <div id="main" class="container">
         <textarea spellcheck="true" rows = 20 cols="100"  autofocus="on" data-bind="event: {input:showValores}" placeholder="Inserte aqui el texto que desea analizar"></textarea>
-        <div></div>
+        <div class="info-repetidas">
+        </div>
     </div>
     <div id="info" class="container">
         <h3 id="num-palabras">Numero de palabras: 0</h3>
@@ -36,8 +37,8 @@
         <h3 id="num-letras">Numero de letras: 0</h3>
     </div>
     <div id="botones" class="container">
-        <div class="container-ch"><input type="checkbox" data-bind="event: {input:toggleCorreccion}" checked="true" > Corregir ortografia</input></div>
-        <div class="container-ch"><input type="checkbox" checked="true"> Marcar palabras repetidas</input></div>
+        <div class="container-ch"><input id="check-ortografia" type="checkbox" data-bind="event: {input:toggleCorreccion}" checked="true" > Corregir ortografia</input></div>
+        <div class="container-ch"><button id="mostrar-repetidas" data-bind="event: {click:toggleEditar}"> Marcar palabras repetidas</button></div>
         <div class="container"><button data-bind="click: limpiar">Limpiar</button></div>
     </div>
     <script src="js/lib/jquery-3.6.0.js"></script>

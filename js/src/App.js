@@ -22,7 +22,6 @@ var ViewModel = function(){
         var numLetras = $('#num-letras');
         numPalabras.text('Numero de palabras: ' + self.texto().numPalabras());
         numLetras.text('Numero de letras: ' + self.texto().numLetras());
-        self.mostrarRepetidas();
     }
 
     this.limpiar = function(){
@@ -55,10 +54,30 @@ var ViewModel = function(){
             listaContenido.splice(posiciones[i]+agregadas+1,0,"</span>")
             listaContenido.splice(posiciones[i]+agregadas,0,"<span class=\"subrayada\">")
             agregadas+=2;
-            console.log(listaContenido);
         }
-        var textArea = $('textarea');
-        textArea.html = listaContenido.join(" ");
+        var text = document.querySelector('.info-repetidas');
+        text.innerHTML = listaContenido.join(" ");
+        text.style.display = "block";
+        document.querySelector('textarea').style.display = "none";
+        document.querySelector('#mostrar-repetidas').innerHTML = "Seguir editando";
+        document.querySelector('#mostrar-repetidas').style.width = "600px";
+        document.querySelector('#check-ortografia').style.display = "none";
+    };
+
+    this.toggleEditar = function(){
+        var button =  document.querySelector('#mostrar-repetidas');
+        console.log(button.innerHTML);
+        if(button.innerHTML === "Seguir editando"){
+            console.log("hola")
+            document.querySelector('.info-repetidas').style.display = "none";
+            document.querySelector('textarea').style.display = "block";  
+            button.innerHTML =  "Marcar palabras repetidas";
+            document.querySelector('#check-ortografia').style.display = "block";
+        }else{
+            self.mostrarRepetidas();
+            
+        }
+
     }
 
 
