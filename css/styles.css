@@ -42,6 +42,20 @@ textarea::-webkit-scrollbar-thumb{
     border-radius: 12px;
 }
 
+body::-webkit-scrollbar{
+    background-color: #1c2f40;
+    position: relative;
+    left: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #8094a6;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
 h3{
     display: flex;
     justify-content: center;
@@ -78,6 +92,16 @@ select{
     color: #f2e9d8;
 }
 
+p{
+    position: absolute;
+    top: 10px;
+    left: 140px;
+    font-family: 'Uchen', serif;
+    
+    font-size: 18px;
+
+    color: #223a4f;;
+}
 
 .container{
     display: flex;
@@ -104,11 +128,30 @@ select{
     border-radius: 12px;
     outline-color: #1c2f40;
     border-width: 2px;
+    overflow-y: scroll;
 }
+
+.info-repetidas::-webkit-scrollbar{
+    background-color: #1c2f40;
+    position: relative;
+    left: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.info-repetidas::-webkit-scrollbar-thumb{
+    background-color: #8094a6;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
 
 .subrayada{
     background-color: brown;
     border-radius: 12px;
+}
+.by{
+    width: 200px;
 }
 
 #info{
