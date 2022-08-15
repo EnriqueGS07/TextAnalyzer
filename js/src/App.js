@@ -8,7 +8,7 @@ var ViewModel = function(){
     var self = this;
     this.texto = ko.observable(new Texto);
     this.funciones = new Funciones();
-    
+    this.color = ko.observable('light');
     this.setValoresTexto = function(){
         var textArea = $('textarea').val();
         self.texto().contenido(textArea);
@@ -60,15 +60,13 @@ var ViewModel = function(){
         text.style.display = "block";
         document.querySelector('textarea').style.display = "none";
         document.querySelector('#mostrar-repetidas').innerHTML = "Seguir editando";
-        document.querySelector('#mostrar-repetidas').style.width = "600px";
+        
         document.querySelector('#check-ortografia').style.display = "none";
     };
 
     this.toggleEditar = function(){
         var button =  document.querySelector('#mostrar-repetidas');
-        console.log(button.innerHTML);
         if(button.innerHTML === "Seguir editando"){
-            console.log("hola")
             document.querySelector('.info-repetidas').style.display = "none";
             document.querySelector('textarea').style.display = "block";  
             button.innerHTML =  "Marcar palabras repetidas";
@@ -77,8 +75,49 @@ var ViewModel = function(){
             self.mostrarRepetidas();
             
         }
-
     }
+
+    this.darkmode = function(){
+    if(self.color() === 'light'){
+        document.querySelector('body').style.backgroundColor = "#1c2f40";
+        document.querySelector('h1').style.color = "#d9d1ba";
+        document.querySelector('h3').style.color = "#d9d1ba";
+        document.querySelector('p').style.color = "#d9d1ba";
+        document.querySelector('#mostrar-repetidas').style.backgroundColor = "#d9d1ba";
+        document.querySelector('#mostrar-repetidas').style.color = "#1c2f40";
+        document.querySelector('#limpiar').style.backgroundColor = "#d9d1ba";
+        document.querySelector('#limpiar').style.color = "#1c2f40";
+        document.querySelector('.container-ch').style.color = "#d9d1ba";
+        document.querySelector('#num-letras').style.color = "#d9d1ba";
+        document.querySelector('select').style.backgroundColor = "#d9d1ba";
+        document.querySelector('select').style.color = "#1c2f40";
+        document.querySelector('textarea').style.backgroundColor = "#0d1627";
+        document.querySelector('textarea').style.color = "white";
+        document.querySelector('.info-repetidas').style.backgroundColor = "#0d1627";
+        document.querySelector('.info-repetidas').style.color = "white";
+        self.color('dark');
+    }else{
+        document.querySelector('body').style.backgroundColor = "#d9d1ba";
+        document.querySelector('h1').style.color = "#1c2f40";
+        document.querySelector('h3').style.color = "#1c2f40";
+        document.querySelector('p').style.color = "#1c2f40";
+        document.querySelector('#mostrar-repetidas').style.backgroundColor = "#1c2f40";
+        document.querySelector('#mostrar-repetidas').style.color = "#d9d1ba";
+        document.querySelector('#limpiar').style.backgroundColor = "#1c2f40";
+        document.querySelector('#limpiar').style.color = "#d9d1ba";
+        document.querySelector('.container-ch').style.color = "#1c2f40";
+        document.querySelector('#num-letras').style.color = "#1c2f40";
+        document.querySelector('select').style.backgroundColor = "#1c2f40";
+        document.querySelector('select').style.color = "#d9d1ba";
+        document.querySelector('textarea').style.backgroundColor = "#f2e9d8";
+        document.querySelector('textarea').style.color = "black";
+        document.querySelector('.info-repetidas').style.backgroundColor = "#f2e9d8";
+        document.querySelector('.info-repetidas').style.color = "black";
+        self.color('light');
+    }
+    }
+
+
 
 
 };

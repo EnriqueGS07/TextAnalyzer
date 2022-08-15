@@ -16,10 +16,13 @@
     <link rel="shortcut icon" type="image/png" href="img/iconText.png">
 </head>
 <body>
-    <div class="container">
-        <h1>Text Analyzer</h1>
+    <div id="header">
+        <div class="container"><p>By: Enrique Gonzalez</p></div>
+        <div class="container"><h1>Text Analyzer</h1></div>
+        <div class="container"><button id="darkmode" data-bind="event:{click:darkmode}"><img src="img/lightMode.png"/></button></div>
     </div>
-    <p>By: Enrique Gonzalez</p>
+    
+    
     <div id="main" class="container">
         <textarea spellcheck="true" rows = 20 cols="100"  autofocus="on" data-bind="event: {input:showValores}" placeholder="Inserte aqui el texto que desea analizar"></textarea>
         <div class="info-repetidas">
@@ -40,12 +43,12 @@
     <div id="botones" class="container">
         <div class="container-ch"><input id="check-ortografia" type="checkbox" data-bind="event: {input:toggleCorreccion}" checked="true" > Corregir ortografia</input></div>
         <div class="container-ch"><button id="mostrar-repetidas" data-bind="event: {click:toggleEditar}"> Marcar palabras repetidas</button></div>
-        <div class="container"><button data-bind="click: limpiar">Limpiar</button></div>
+        <div class="container"><button id="limpiar" data-bind="click: limpiar">Limpiar</button></div>
     </div>
     <script src="js/lib/jquery-3.6.0.js"></script>
     <script src="js/lib/knockout-3.5.1.js"></script>
     <script src="js/src/funcionalidad.js"></script>
-    <script src="js/src/App.js"></script>bb
+    <script src="js/src/App.js"></script>
     
 </body>
 </html>
