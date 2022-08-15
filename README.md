@@ -64,3 +64,11 @@ Esta aplicación esta disponible tanto para computadores de escritorio como para
 
 
 ![darkMode2](https://user-images.githubusercontent.com/98104282/184699972-aa14664d-dcd0-426f-9158-07c83bf3ebc2.png)
+
+## Modelo de conceptos de la aplicacion
+![image](https://user-images.githubusercontent.com/98104282/184701702-eae782a6-c29c-46e9-b781-82545d1d1239.png)
+
+## Casos de uso
+![image](https://user-images.githubusercontent.com/98104282/184701857-b926192e-518e-4bb0-bc78-e11fef5e6d2e.png)
+
+
