@@ -50,6 +50,9 @@ var ViewModel = function(){
             }
         }
         var agregadas = 0;
+        posiciones = posiciones.sort(function(num1, num2){
+            return num1-num2;
+        })
         for(let i = 0; i<posiciones.length;i++){
             listaContenido.splice(posiciones[i]+agregadas+1,0,"</span>")
             listaContenido.splice(posiciones[i]+agregadas,0,"<span class=\"subrayada\">")
