@@ -44,7 +44,7 @@ var ViewModel = function(){
         var posiciones = [];
         for(let currentWord of repetidas){
             for(var i = 0; i<listaContenido.length;i++){
-                if(currentWord === listaContenido[i]){
+                if(currentWord === listaContenido[i].toLowerCase()){
                     posiciones.push(i)
                 }
             }
